@@ -89,7 +89,7 @@ function Card() {
                             <td>Species</td>
                             <td>{pokemon?.species?.name}</td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>Stats</td>
                             <td>
                                 <div className="overflow-x-auto">
@@ -117,7 +117,7 @@ function Card() {
                                     </table>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> */}
                         </tbody>
                     </table>
                 </div>
@@ -126,4 +126,4 @@ function Card() {
     );
 }
 
-export default Card
+export default Card;
