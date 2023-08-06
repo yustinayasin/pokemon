@@ -1,5 +1,8 @@
 import pokemonSprite from './assets/pokemon-2.jpg';
 import { useState, useEffect } from 'react';
+import './Card.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 interface Ability {
     ability: {
@@ -54,10 +57,13 @@ function Card() {
     }, []);
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
-            <figure className='p-6'><img src={pokemon?.sprites?.other?.dream_world?.front_default} style={{width: 300}} alt="Pokemon"/></figure>
+        <div className="card bg-base-100 shadow-xl flex flex-column">
+            <figure className='p-15'><img src={pokemon?.sprites?.other?.dream_world?.front_default} style={{width: 200}} alt="Pokemon"/></figure>
             <div className="card-body">
-                <h2 className="card-title">{pokemon?.name}</h2>
+                <div className="flex flex-row justify-between items-center">
+                    <h2 className="card-title text-">{pokemon?.name}</h2>
+                    <FontAwesomeIcon icon={faHeart} className='text-3xl'/>
+                </div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         <tbody>
@@ -114,9 +120,6 @@ function Card() {
                         </tr>
                         </tbody>
                     </table>
-                    </div>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
                 </div>
             </div>
         </div>
